@@ -1,0 +1,1 @@
+# Cinnamon Play tracing sample
