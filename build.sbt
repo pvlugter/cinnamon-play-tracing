@@ -1,10 +1,11 @@
 lazy val cinnamonPlayTracing = project
   .in(file("."))
-  .aggregate(frontend, service, backend)
+  .aggregate(frontend, service, backend, tracedws)
 
 lazy val frontend = project
   .in(file("frontend"))
   .enablePlugins(PlayScala, Cinnamon)
+  .dependsOn(tracedws)
   .settings(
     scalaVersion := "2.12.3",
     libraryDependencies += guice,
@@ -31,4 +32,12 @@ lazy val backend = project
     libraryDependencies += Cinnamon.library.cinnamonOpenTracingZipkin,
     cinnamon in run := true,
     connectInput in run := true // we wait on stdin
+  )
+
+lazy val tracedws = project
+  .in(file("tracedws"))
+  .settings(
+    scalaVersion := "2.12.3",
+    libraryDependencies += ws,
+    libraryDependencies += Cinnamon.library.cinnamonOpenTracing
   )
