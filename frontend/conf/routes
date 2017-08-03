@@ -1,0 +1,1 @@
+GET  /:message  controllers.Frontend.request(message)
