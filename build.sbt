@@ -19,7 +19,7 @@ lazy val service = project
   .settings(
     scalaVersion := "2.12.3",
     libraryDependencies += guice,
-    libraryDependencies += "com.typesafe.akka" %% "akka-remote" % "2.5.3",
+    libraryDependencies += "com.typesafe.akka" %% "akka-remote" % "2.5.4",
     libraryDependencies += Cinnamon.library.cinnamonOpenTracingZipkin
   )
 
@@ -28,7 +28,7 @@ lazy val backend = project
   .enablePlugins(Cinnamon)
   .settings(
     scalaVersion := "2.12.3",
-    libraryDependencies += "com.typesafe.akka" %% "akka-remote" % "2.5.3",
+    libraryDependencies += "com.typesafe.akka" %% "akka-remote" % "2.5.4",
     libraryDependencies += Cinnamon.library.cinnamonOpenTracingZipkin,
     cinnamon in run := true,
     connectInput in run := true // we wait on stdin
