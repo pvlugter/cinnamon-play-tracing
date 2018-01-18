@@ -55,6 +55,6 @@ Traces will be reported to Zipkin at:
 
 [http://localhost:9411/zipkin/](http://localhost:9411/zipkin/)
 
-Here's an example cross-service trace, that includes a manually traced Play WS request:
+Here's an example cross-service trace:
 
 ![cross-service trace](images/trace.png)
